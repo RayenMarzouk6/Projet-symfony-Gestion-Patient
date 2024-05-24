@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="my-4">User Details</h1>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            User Information
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Id</dt>
+                <dd class="col-sm-9">{{ user.id }}</dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">{{ user.email }}</dd>
+
+                <dt class="col-sm-3">Nom Patient</dt>
+                <dd class="col-sm-9">{{ user.nomP }}</dd>
+
+                <dt class="col-sm-3">Prenom Patient</dt>
+                <dd class="col-sm-9">{{ user.prenomP }}</dd>
+
+                <dt class="col-sm-3">NumTel</dt>
+                <dd class="col-sm-9">{{ user.numTel }}</dd>
+            </dl>
+        </div>
+    </div>
+
+    <a href="{{ path('app_user_index') }}" class="btn btn-secondary me-2">Back to list</a>
+
+    <a href="{{ path('app_user_edit', {'id': user.id}) }}" class="btn btn-primary">Edit</a>
+
+    {{ include('user/_delete_form.html.twig') }}
+</div>
+{% endblock %}

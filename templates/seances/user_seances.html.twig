@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes Séances{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        .no-seance-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+        .seances-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .seance-item {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="mb-4">Mes Séances</h1>
+
+    {% if seances is empty %}
+        <div class="text-center">
+            <p class="lead">Vous n'avez aucune séance programmée.</p>
+            <img src="{{ asset('img/main-vector.png') }}" alt="No Seances" class="no-seance-image">
+        </div>
+    {% else %}
+        <ul class="seances-list">
+            {% for seance in seances %}
+                <li class="seance-item">
+                    <h5>{{ seance.codeP.nomP }}</h5>
+                    <p>{{ seance.DateSoin|date('d/m/Y H:i') }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}

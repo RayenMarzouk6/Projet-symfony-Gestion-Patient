@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Seances{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="mt-5 mb-4">Seances</h1>
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th scope="row" style="width: 30%;">Id</th>
+                    <td>{{ seance.id }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">DateSoin</th>
+                    <td>{{ seance.DateSoin ? seance.DateSoin|date('Y-m-d') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('app_seances_index') }}" class="btn btn-primary mb-3">Back to list</a>
+        <a href="{{ path('app_seances_edit', {'id': seance.id}) }}" class="btn btn-secondary mb-3">Edit</a>
+
+        {{ include('admin/seances/delete_form.html.twig') }}
+    </div>
+{% endblock %}

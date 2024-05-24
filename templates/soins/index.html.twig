@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Soins index{% endblock %}
+
+{% block body %}
+    <h1>Soins index</h1>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for soin in soins %}
+                    <tr>
+                        <td>{{ soin.id }}</td>
+                        <td>{{ soin.designation }}</td>
+                        <td>
+                            <a href="{{ path('app_soins_show', {'id': soin.id}) }}" class="btn btn-info btn-sm">Show</a>
+                            <a href="{{ path('app_soins_edit', {'id': soin.id}) }}" class="btn btn-primary btn-sm">Edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">No records found</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <a href="{{ path('app_soins_new') }}" class="btn btn-success">Create new</a>
+{% endblock %}

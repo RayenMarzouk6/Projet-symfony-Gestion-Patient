@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Seances{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="mt-5">Edit Seances</h1>
+                
+                {{ include('seances/_form.html.twig', {'button_label': 'Update'}) }}
+                
+                <a href="{{ path('app_seances_index') }}" class="btn btn-secondary mt-3">Back to List</a>
+                
+                {{ include('admin/seances/delete_form.html.twig') }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
