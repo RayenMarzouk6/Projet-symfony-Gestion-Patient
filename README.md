@@ -15,6 +15,12 @@ This command generates the database schema based on the current mapping metadata
    ```bash
    php bin/console doctrine:schema:create
 
+
+
+## logo 
+![Capture d'écran 2024-05-04 210948](https://github.com/RayenMarzouk6/Student-Registration-Java-App-/assets/162569033/937a58f7-ebf3-4be3-a975-d8aa38bd1b61)
+
+## Screenshots
 ![Capture d'écran 2024-05-24 193227](https://github.com/RayenMarzouk6/Projet-symfony-Gestion-Patient/assets/162569033/e1e8dff9-0d45-456d-9d9d-4b16ea6913b4)
 ![Capture d'écran 2024-05-24 193400](https://github.com/RayenMarzouk6/Projet-symfony-Gestion-Patient/assets/162569033/7b841290-2ed4-40df-8658-73511543283a)
 ![Capture d'écran 2024-05-24 192904](https://github.com/RayenMarzouk6/Projet-symfony-Gestion-Patient/assets/162569033/9dc897f6-9d2d-482d-82f5-6060d3638892)
